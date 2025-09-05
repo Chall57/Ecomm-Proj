@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ClienteCadFormUI from "../components/ClienteCadFormUI"; 
+import ClienteLogin from "../components/ClienteLogin";
 import ClienteList from "../pages/Cliente/ClienteList";
 import ClienteDetails from "../pages/Cliente/ClienteDetails";
 import ClienteForm from "../pages/Cliente/ClienteForm";
+import ClienteInfo from "../components/ClienteInfo";
 import Navbar from "../components/Navbar";
 
 function AppRoutes() {
@@ -19,8 +21,10 @@ function AppRoutes() {
         <Route path="/clientes/:id" element={<ClienteDetails />} />
         <Route path="/clientes/novo" element={<ClienteForm />} />
 
-        {/* 🚀 Rota para o formulário estilizado (UI de teste) */}
+        {/* 🚀 Rotas extras */}
         <Route path="/clientes/form" element={<ClienteCadFormUI />} />
+        <Route path="/login" element={<ClienteLogin />} />
+        <Route path="/clientes/info" element={<ClienteInfo />} />
       </Routes>
     </Router>
   );
