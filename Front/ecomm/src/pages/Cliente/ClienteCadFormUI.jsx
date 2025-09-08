@@ -33,7 +33,7 @@ function ClienteCadFormUI() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Dados enviados:", form);
-    // POST para API depois...
+    // POST para API
   };
 
   // Props comuns para os TextFields (garante altura mínima uniforme)
@@ -135,8 +135,7 @@ function ClienteCadFormUI() {
                   }}
                   required
                 >
-                  {/* NÃO colocamos um MenuItem de placeholder aqui.
-                      Somente as opções verdadeiras são listadas: */}
+                  {/* Gen Menu */}
                   <MenuItem value="Masculino">Masculino</MenuItem>
                   <MenuItem value="Feminino">Feminino</MenuItem>
                   <MenuItem value="Outro">Outro</MenuItem>

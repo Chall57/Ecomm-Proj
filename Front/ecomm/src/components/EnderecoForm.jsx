@@ -1,47 +1,41 @@
-// src/components/EnderecoForm.jsx
-import { useState } from "react";
+import React from "react";
+import { Grid, TextField } from "@mui/material";
 
-const EnderecoForm = ({ onAdd }) => {
-  const [endereco, setEndereco] = useState({
-    titulo: "",
-    rua: "",
-    numero: "",
-    bairro: "",
-    cidade: "",
-    estado: "",
-    cep: "",
-  });
-
-  const handleChange = (e) => {
-    setEndereco({ ...endereco, [e.target.name]: e.target.value });
-  };
-
-  const handleAdd = () => {
-    onAdd(endereco);
-    setEndereco({
-      titulo: "",
-      rua: "",
-      numero: "",
-      bairro: "",
-      cidade: "",
-      estado: "",
-      cep: "",
-    });
-  };
-
+function EnderecoForm({ endereco }) {
   return (
-    <div>
-      <h4>Adicionar Endereço</h4>
-      <input name="titulo" value={endereco.titulo} onChange={handleChange} placeholder="Título" />
-      <input name="rua" value={endereco.rua} onChange={handleChange} placeholder="Rua" />
-      <input name="numero" value={endereco.numero} onChange={handleChange} placeholder="Número" />
-      <input name="bairro" value={endereco.bairro} onChange={handleChange} placeholder="Bairro" />
-      <input name="cidade" value={endereco.cidade} onChange={handleChange} placeholder="Cidade" />
-      <input name="estado" value={endereco.estado} onChange={handleChange} placeholder="Estado" />
-      <input name="cep" value={endereco.cep} onChange={handleChange} placeholder="CEP" />
-      <button onClick={handleAdd}>Adicionar</button>
-    </div>
+    <Grid container spacing={2}>
+      <Grid item xs={12} sm={6}>
+        <TextField fullWidth label="Tipo de residência" value={endereco.tipoResidencia} />
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <TextField fullWidth label="Tipo Logradouro" value={endereco.tipoLogradouro} />
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <TextField fullWidth label="Logradouro" value={endereco.logradouro} />
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <TextField fullWidth label="Número" value={endereco.numero} />
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <TextField fullWidth label="Bairro" value={endereco.bairro} />
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <TextField fullWidth label="CEP" value={endereco.cep} />
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <TextField fullWidth label="Cidade" value={endereco.cidade} />
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <TextField fullWidth label="Estado" value={endereco.estado} />
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <TextField fullWidth label="País" value={endereco.pais} />
+      </Grid>
+      <Grid item xs={12}>
+        <TextField fullWidth label="Observações" value={endereco.observacoes} />
+      </Grid>
+    </Grid>
   );
-};
+}
 
 export default EnderecoForm;

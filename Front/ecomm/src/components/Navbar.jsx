@@ -5,6 +5,7 @@ import {
   Typography,
   IconButton,
   Avatar,
+  Button,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -26,7 +27,17 @@ function Navbar() {
           Ecomm
         </Typography>
 
-        {/* Avatar que agora é link direto para perfil */}
+        {/* Botão Administração */}
+        <Button
+          color="inherit"
+          component={Link}
+          to="/admin/clientes"
+          sx={{ mr: 2 }}
+        >
+          Administração
+        </Button>
+
+        {/* Avatar -> Perfil do cliente */}
         <IconButton component={Link} to="/perfil" color="inherit">
           <Avatar sx={{ bgcolor: "secondary.main" }}></Avatar>
         </IconButton>
