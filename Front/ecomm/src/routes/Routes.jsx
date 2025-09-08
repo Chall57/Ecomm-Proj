@@ -6,25 +6,29 @@ import ClienteList from "../pages/Cliente/ClienteList";
 import ClienteDetails from "../pages/Cliente/ClienteDetails";
 import ClienteForm from "../pages/Cliente/ClienteForm";
 import ClienteInfo from "../components/ClienteInfo";
+import ClientePerfil from "../components/ClientePerfil";
 import Navbar from "../components/Navbar";
 
 function AppRoutes() {
   return (
     <Router>
-      <Navbar /> {/* Navbar fixa em todas as páginas */}
+      <Navbar />
       <Routes>
-        {/* Página inicial */}
         <Route path="/" element={<h1 style={{ padding: "20px" }}>Bem-vindo ao Ecomm</h1>} />
 
         {/* Rotas de Cliente */}
         <Route path="/clientes" element={<ClienteList />} />
         <Route path="/clientes/:id" element={<ClienteDetails />} />
         <Route path="/clientes/novo" element={<ClienteForm />} />
-
-        {/* 🚀 Rotas extras */}
         <Route path="/clientes/form" element={<ClienteCadFormUI />} />
-        <Route path="/login" element={<ClienteLogin />} />
         <Route path="/clientes/info" element={<ClienteInfo />} />
+
+        {/* Nova rota de perfil */}
+        <Route path="/perfil" element={<ClientePerfil />} />
+
+        {/* Futuras rotas */}
+        <Route path="/pedidos" element={<h2>📦 Tela de Pedidos (em construção)</h2>} />
+        <Route path="/trocas" element={<h2>🔄 Tela de Trocas (em construção)</h2>} />
       </Routes>
     </Router>
   );
