@@ -24,14 +24,14 @@ function Navbar() {
             color: "inherit",
           }}
         >
-          Ecomm
+          HOME
         </Typography>
 
-        {/* Botão Administração */}
+        {/* Botão Administração -> AdminHome */}
         <Button
           color="inherit"
           component={Link}
-          to="/admin/clientes"
+          to="/admin"
           sx={{ mr: 2 }}
         >
           Administração
